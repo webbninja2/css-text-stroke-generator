@@ -1,0 +1,174 @@
+<!DOCTYPE html>  
+<html>  
+    <head>  
+        <title>CSS Text MASK</title>  
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
+    </head>      
+    <body>  
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-sm-8 form-generator">
+                    <div class="GlobalOptions">
+                        <div class="row options">
+                            <div class="col-md-6">
+                                <div class="text-content" id="textContent">
+                                    <label>Enter Text:</label><br>
+                                    <input type="text" id="dummyText" placeholder="Sample Text" maxlength="25">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="background-colors">
+                                    <label>Select Background Color:</label><br>
+                                    <div class="color-box" id="whiteBox" style="background-color: white"></div>
+                                    <div class="color-box" id="blackBox" style="background-color: black"></div>
+                                    <div class="color-box" id="imageBackground" style="background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAC1JREFUeNpiPHPmDAM2YGxsjFWciYFEMKqBGMD4//9/rBJnz54dDSX6aQAIMABCtQiAsDRF+wAAAABJRU5ErkJggg==');"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row options">
+                            <div class="col-md-6">
+                                <div class="font-family-dropdown">
+                                    <label for="fontFamilySelect">Font Family:</label><br>
+                                    <select id="fontFamilySelect">
+                                        <option>Select Font Family</option>
+                                        <option value="Arial, sans-serif">Arial</option>
+                                        <option value="Helvetica, sans-serif">Helvetica</option>
+                                        <option value="Times New Roman, serif">Times New Roman</option>
+                                        <option value="Georgia, serif">Georgia</option>
+                                        <option value="Courier New, monospace">Courier New</option>
+                                        <option value="Verdana, sans-serif">Verdana</option>
+                                        <option value="Tahoma, sans-serif">Tahoma</option>
+                                        <option value="Trebuchet MS, sans-serif">Trebuchet MS</option>
+                                        <option value="Roboto, sans-serif">Roboto</option>
+                                        <option value="Open Sans, sans-serif">Open Sans</option>
+                                        <option value="Lato, sans-serif">Lato</option>
+                                        <option value="Montserrat, sans-serif">Montserrat</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="bold-italic-options">
+                                    <label for="fontFamilySelect">Font Style:</label><br>
+                                    <div class="bold-italic-option" id="boldOption">B</div>
+                                    <div class="bold-italic-option italic" id="italicOption">I</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row options">
+                            <div class="col-md-6">
+                                <div class="className">
+                                    <label>Class Name:</label><br>
+                                    <input type="text" id="classname" class="input-text" value="class-name" placeholder="class name">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stroke-color-picker">
+                                    <label for="strokeColor">Stroke Color:</label><br>
+                                    <input type="color" id="strokeColor" value="#B80000" style="width: 45px;height: 45px;">
+                                    <input type="text" id="strokeColorInput" value="#B80000" style="width: 100px;height: 45px;">
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="stroke-fill-color">
+                                    <label for="fillColor">Text Color:</label><br>
+                                    <input type="color" id="fillColor" value="#666" style="width: 45px;height: 45px;">
+                                    <input type="text" id="fillColorInput" value="#666" style="width: 100px;height: 45px;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="boxLaoyut">
+                        <div class="box" id="box">
+                            <div id="sampleText">Sample Text</div>
+                        </div>
+                    </div>
+                    <div class="tab-container">
+                        <div class="tab active-tab" id="textstrokeTab">Text Stroke</div>
+                        <div class="tab" id="backgroundTab">Background</div>
+                        <div class="tab" id="textshadowTab">Text Shadow</div>
+                    </div>
+                    <div class="generatorOptions">
+                        <!-- TEXT STROKE OPTIONS -->
+                        <div class="size-options">
+                            <div class="text-font">
+                                <label for="fontSize">Font Size:</label>
+                                <input type="range" id="fontSize" min="10" max="100" value="80">
+                                <input type="text" id="fontSizeValue" value="80px" style="width: 80px;">
+                            </div>
+                            <div class="letter-spacing">
+                                <label for="letterSpacing">Letter Spacing:</label>
+                                <input type="range" id="letterSpacing" min="-10" max="10" value="0">
+                                <input type="text" id="letterSpacingValue" value="0px" style="width: 80px;">
+                            </div>
+                            <div class="stroke-width-picker">
+                                <label for="strokeWidthRange">Stroke width:</label>
+                                <input type="range" id="strokeWidthRange" min="0.1" max="10" step="0.1" value="1">
+                                <input type="number" id="strokeWidthInput" min="0.1" max="10" step="0.1" value="1" style="width: 80px;">
+                            </div>
+                        </div>
+                        <!-- TEXT STROKE OPTIONS -->
+                        <!-- BACKGROUND OPTIONS -->
+                        <div class="bg-options hidden" id="bgOptions">
+                            <div class="bg-image-options">
+                                <label>Background Image:</label><br>
+                                <div class="bgImages">
+                                    <div class="image-option" style="background-image: url('assets/images/mask-image1.jpg');"></div>
+                                    <div class="image-option" style="background-image: url('assets/images/mask-image2.jpg');"></div>
+                                    <div class="image-option" style="background-image: url('assets/images/mask-image3.jpg');"></div>
+                                    <div class="image-option" style="background-image: url('assets/images/mask-image4.jpg');"></div>
+                                </div>
+                            </div>
+                            <div class="bg-position">
+                                <label for="bgPositionX">BG Position X:</label>
+                                <input type="range" id="bgPositionX" min="0" max="100" value="50">
+                                <input type="text" id="bgPositionXValue" value="50%" style="width: 80px;">
+                            </div>
+                            <div class="bg-position">
+                                <label for="bgPositionY">BG Position Y:</label>
+                                <input type="range" id="bgPositionY" min="0" max="100" value="50">
+                                <input type="text" id="bgPositionYValue" value="50%" style="width: 80px;">
+                            </div>
+                        </div>
+                        <!-- BACKGROUND OPTIONS -->
+                        <!-- TEXT SHADOW OPTIONS -->
+                        <div class="textshadow-options hidden" id="txtshadowOptions">
+                            <div class="horigental-range">
+                                <label for="offsetRange">hor.Length:</label>
+                                <input type="range" id="horigentalrange" min="-50" max="50" value="">
+                                <input type="number" id="horigentalinput" min="-50" max="50" value="4" style="width: 80px;">
+                            </div>
+                            <div class="vertical-range">
+                                <label for="offsetRange">Vert. Length:</label>
+                                <input type="range" id="veticalrange" min="-80" max="80" value="">
+                                <input type="number" id="veticalinput" min="-80" max="80" value="4" style="width: 80px;">
+                            </div>
+                            <div class="blur-range">
+                                <label for="offsetRange">Blur Radius:</label>
+                                <input type="range" id="blurrange" min="0" max="50" value="0">
+                                <input type="number" id="blurinput" min="0" max="50" value="0" style="width: 80px;">
+                            </div>
+                            <div class="opacity-range">
+                                <label for="offsetRange">Opacity:</label>
+                                <input type="range" id="opacityrange" min="0" max="100" value="0">
+                                <input type="number" id="opacityinput" min="0" max="100" value="0" style="width: 80px;">
+                            </div>
+                            <div class="text-shadow-color">
+                                <label for="textShadowColor">Text Shadow Color:</label><br>
+                                <input type="color" id="textShadowColor" value="#a3a3a3" style="width: 45px; height: 45px;">
+                                <input type="text" id="textShadowColorInput" value="#a3a3a3" style="width: 100px; height: 45px;">
+                            </div>
+                        </div>
+                        <!-- TEXT SHADOW OPTIONS -->
+                        <button id="generateCodeButton"><img src="assets/images/tools2.png"> Generate Code</button>
+                    </div>
+                </div>
+                <div class="cols col_4_of_12">
+                    <h3>Sidebar</h3>
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/custom.js"></script>
+    </body>  
+</html>  
